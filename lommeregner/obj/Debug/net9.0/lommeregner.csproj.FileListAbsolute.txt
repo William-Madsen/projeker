@@ -1,0 +1,14 @@
+/Users/williamlundmadsen/projeker/lommeregner/bin/Debug/net9.0/lommeregner
+/Users/williamlundmadsen/projeker/lommeregner/bin/Debug/net9.0/lommeregner.deps.json
+/Users/williamlundmadsen/projeker/lommeregner/bin/Debug/net9.0/lommeregner.runtimeconfig.json
+/Users/williamlundmadsen/projeker/lommeregner/bin/Debug/net9.0/lommeregner.dll
+/Users/williamlundmadsen/projeker/lommeregner/bin/Debug/net9.0/lommeregner.pdb
+/Users/williamlundmadsen/projeker/lommeregner/obj/Debug/net9.0/lommeregner.GeneratedMSBuildEditorConfig.editorconfig
+/Users/williamlundmadsen/projeker/lommeregner/obj/Debug/net9.0/lommeregner.AssemblyInfoInputs.cache
+/Users/williamlundmadsen/projeker/lommeregner/obj/Debug/net9.0/lommeregner.AssemblyInfo.cs
+/Users/williamlundmadsen/projeker/lommeregner/obj/Debug/net9.0/lommeregner.csproj.CoreCompileInputs.cache
+/Users/williamlundmadsen/projeker/lommeregner/obj/Debug/net9.0/lommeregner.dll
+/Users/williamlundmadsen/projeker/lommeregner/obj/Debug/net9.0/refint/lommeregner.dll
+/Users/williamlundmadsen/projeker/lommeregner/obj/Debug/net9.0/lommeregner.pdb
+/Users/williamlundmadsen/projeker/lommeregner/obj/Debug/net9.0/lommeregner.genruntimeconfig.cache
+/Users/williamlundmadsen/projeker/lommeregner/obj/Debug/net9.0/ref/lommeregner.dll

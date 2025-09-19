@@ -1,4 +1,4 @@
-Console.WriteLine("dette er en lommeregner :)");
+﻿Console.WriteLine("dette er en lommeregner :)");
 Console.WriteLine("Skriv det første tal:");
 string input1 = Console.ReadLine(); // Læs det første tal
 Console.WriteLine("Skriv det andet tal:");
@@ -12,7 +12,7 @@ if (!double.TryParse(input1, out num1) || !double.TryParse(input2, out num2))
     // hvis der er et bogstav eller andet end et tal
     // så stopper programmet og skriver en fejlbesked
 }
-Console.WriteLine("Vælg en operation (+, -, *, /):");
+Console.WriteLine("Vælg en operation (+, -, *, /, kvrod, ^):");
 string operation = Console.ReadLine();
 double result = 0;
 
@@ -46,6 +46,26 @@ switch (operation)
             // hvis du divider med 0 så stopper programmet og skriver en fejlbesked
         }
         break;
+    case "kvrod":
+        if (num1 >= 0 && num2 >= 0)
+        // hvis begge tal er større end eller lig med 0 så køre den koden nedenunder
+        {
+            result = Math.Sqrt(num1) + Math.Sqrt(num2);
+            // regner kvadratroden af de to tal sammen
+        }
+        else
+        // hvis et af tallene er mindre end 0 så køre den koden nedenunder
+        {
+            Console.WriteLine("Error: Kvadratrod af negative tal er ikke defineret i de reelle tal.");
+            return;
+            // hvis du prøver at regne kvadratroden af et negativt tal så stopper programmet og skriver en fejlbesked
+        }
+        break;
+    case "^":
+        result = Math.Pow(num1, num2);
+        // regner det første tal opløftet i det andet tal
+        break;
+
     default:
         Console.WriteLine("Error: Ugyldig operation.");
         return;

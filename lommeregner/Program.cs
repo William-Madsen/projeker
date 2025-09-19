@@ -3,8 +3,8 @@ Console.WriteLine("Skriv det første tal:");
 string input1 = Console.ReadLine(); // Læs det første tal
 Console.WriteLine("Skriv det andet tal:");
 string input2 = Console.ReadLine(); // Læs det andet tal
-double num1 = 0;  // initialiserer variablerne
-double num2 = 0; // initialiserer variablerne
+double num1 = 0;  
+double num2 = 0; 
 if (!double.TryParse(input1, out num1) || !double.TryParse(input2, out num2))
 {
     Console.WriteLine("Error: Ugyldigt talinddata.");

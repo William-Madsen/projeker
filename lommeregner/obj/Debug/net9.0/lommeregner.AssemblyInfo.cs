@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lommeregner")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a171787841371fb57288a4b10d2e1c4f74dbaef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5fecb360a88d13a4f28c0d28f0ff81d93e87661")]
 [assembly: System.Reflection.AssemblyProductAttribute("lommeregner")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lommeregner")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

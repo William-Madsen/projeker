@@ -12,3 +12,4 @@
 /Users/williamlundmadsen/projeker/lommeregner/obj/Debug/net9.0/lommeregner.pdb
 /Users/williamlundmadsen/projeker/lommeregner/obj/Debug/net9.0/lommeregner.genruntimeconfig.cache
 /Users/williamlundmadsen/projeker/lommeregner/obj/Debug/net9.0/ref/lommeregner.dll
+/Users/williamlundmadsen/projeker/lommeregner/obj/Debug/net9.0/lommeregner.sourcelink.json

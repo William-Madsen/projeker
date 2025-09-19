@@ -21,19 +21,25 @@ switch (operation)
     // regner de forskellige operationer sammen
     case "+":
         result = num1 + num2;
+        // pulser de to tal sammen
         break;
     case "-":
         result = num1 - num2;
+        // minus de to tal sammen
         break;
     case "*":
         result = num1 * num2;
+        // gange de to tal sammen
         break;
     case "/":
         if (num2 != 0)
+        // hvis det andet tal ikke er 0 så køre den koden nedenunder
         {
             result = num1 / num2;
+            // divider de to tal sammen
         }
         else
+        // hvis det andet tal er 0 så køre den koden nedenunder
         {
             Console.WriteLine("Error: Division med nul er ikke tilladt.");
             return;

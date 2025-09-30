@@ -1,3 +1,5 @@
+# Virtual Mouse med Hånd-Tracking - til MacOS
+
 import cv2
 import numpy as np
 import time

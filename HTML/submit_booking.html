@@ -3,12 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Hotel</title>
+    <title>Tak for din booking</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: rgba(223, 243, 255, 0.7);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main_div {
+            max-width: 640px;
+            margin: 60px auto;
+            padding: 32px;
+            background-color: #79b1d2;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .main_div h1 {
+            margin: 0 0 16px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 12px 24px;
+            background-color: #3b7da1;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .back-link:hover {
+            background-color: #2f6784;
+        }
+    </style>
 </head>
 <body>
-    <h1>Tak for din booking!</h1>
-    <p>Vi har modtaget din booking og vender tilbage til dig snarest muligt.</p>
-    <a href="Booking.html">Tilbage til booking siden</a>
+    <div class="main_div">
+        <h1>Tak for din booking!</h1>
+        <p>Vi har modtaget din booking og vender tilbage til dig snarest muligt.</p>
+        <a class="back-link" href="Booking.html">Tilbage til booking siden</a>
+    </div>
 </body>
 </html>

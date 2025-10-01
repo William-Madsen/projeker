@@ -6,23 +6,164 @@
     <title>Booking Hotel</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+body {
+    background-color: rgba(223, 243, 255, 0.7);
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+.main_div {
+    text-align: center;
+    background-color: #79b1d2;
+    padding: 10px;
+}
+
+.main_div.center {
+    padding: 60px 120px;
+    box-sizing: border-box;
+}
+
+.main_div.center.extra-label {
+    position: relative;
+}
+
+.main_div.center.extra-label h3 {
+    margin: 0;
+    text-align: center;
+}
+
+.main_div.center.extra-label .label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.center {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin: 20px auto;
+    max-width: 1400px;
+}
+
+.gallery-item {
+    flex: 0 1 340px;
+    max-width: 380px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.gallery-item .desc {
+    padding: 12px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        flex-basis: 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex-basis: 100%;
+    }
+}
+
+
+</style>
 <body>
-    <h1>Velkommen til vores hotelbooking-side</h1>
-    <p>Udfyld venligst formularen nedenfor for at booke dit ophold.</p>
-    <form action="submit_booking.html" method="POST">
-        <label for="name">Navn:</label>
-        <input type="text" id="name" name="name" required>
+    <div class="main_div center">
+    <h1 class="center">Velkommen til Booby´s hotelbooking-side</h1>
+    <h3 class="center">Hvor vil du have dit ophold til at være?</h3>
+    </div>
+        
+    <div class="gallery">
+    <div class="gallery-item">
+            <a target="_blank" href="submit_booking.html">
+                <img src="hyttevedsø.jpg" alt="Cinque Terre" width="600" height="400">
+            </a>
+    <div class="desc">Book her?</div>
+    </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+    <div class="gallery-item">
+            <a target="_blank" href="submit_booking.html">
+                <img src="hytteibjergene.jpg" alt="Cinque Terre" width="600" height="200">
+            </a>
+    <div class="desc">Book her?</div>
+    </div>
+    </div>
+   
+    <div class="gallery">
+    <div class="gallery-item">
+            <a target="_blank" href="submit_booking.html">
+                <img src="hytte.jpg" alt="Cinque Terre" width="600" height="400">
+            </a>
+    <div class="desc">Book her?</div>
+    </div>
 
-        <label for="checkin">Check-in Dato:</label>
-        <input type="date" id="checkin" name="checkin" required>
+    <div class="gallery-item">
+            <a target="_blank" href="submit_booking.html">
+                <img src="hytte2.jpg" alt="Cinque Terre" width="600" height="400">
+            </a>
+    <div class="desc">Book her?</div>
+    </div>
+    </div>
+    <div class="main_div center extra-label">
+    <h3 class="center">Der er ikke flere hytter lige nu :(</h3>
+    <span class="label">
+        Contact info:<br>
+        Mail: <a href="Booking.dk">Bob</a>.<br>
+        Telefon: +45 12 34 56 78<br>
+        Besøg os:<br>
+        Vesterbrogade 10<br>
+        1234 København K<br>
+        Danmark
+    </span>
+</div>
 
-        <label for="checkout">Check-out Dato:</label>
-        <input type="date" id="checkout" name="checkout" required>
+    
 
-        <input type="submit" value="Book Nu">
-    </form>
+
+    <!--     <div class="center">
+        <form action="submit_booking.html" method="post">
+            <label for="name">Navn:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="checkin">Check-in dato:</label>
+            <input type="date" id="checkin" name="checkin" required>s
+            <label for="checkout">Check-out dato:</label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <label for="room">Værelsestype:</label>
+            <select id="room" name="room" required>
+                <option value="double">Dobbeltværelse</option>
+                <option value="4-personersværelse">4-personersværelse</option>
+            </select>
+              <button type="submit">Book nu</button>
+        </form>
+    </div>
+-->
+          
 </body>
 </html>

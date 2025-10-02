@@ -85,5 +85,26 @@
             <button type="submit">Book nu</button>
         </form>
     </div>
+    <script>
+        (function () {
+            const today = new Date().toISOString().split('T')[0];
+            const dateInputs = document.querySelectorAll('input[type="date"]');
+            dateInputs.forEach((input) => {
+                input.min = today;
+            });
+
+            const checkinInput = document.getElementById('checkin');
+            const checkoutInput = document.getElementById('checkout');
+
+            if (checkinInput && checkoutInput) {
+                checkinInput.addEventListener('change', () => {
+                    checkoutInput.min = checkinInput.value || today; // ensure checkout is not before check-in
+                    if (checkoutInput.value && checkoutInput.value < checkoutInput.min) {
+                        checkoutInput.value = checkoutInput.min;
+                    }
+                });
+            }
+        })();
+    </script>
 </body>
 </html>

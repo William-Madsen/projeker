@@ -1,149 +1,232 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Hotel</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking Hotel</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      background-color: rgba(223, 243, 255, 0.7);
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .main_div {
+      text-align: center;
+      background-color: #79b1d2;
+      padding: 10px;
+      border-radius: 6px;
+      margin: 0 12px;
+    }
+
+    .main_div.center {
+      padding: 30px 120px;
+      box-sizing: border-box;
+    }
+
+    .middleoverlay{
+      text-align: center;
+      background-color: #79b1d2;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .main_div.center.extra-label {
+      position: relative;
+      padding-left: 200px;
+    }
+
+    .main_div.center.extra-label h3 {
+      margin: 0 0 8px;
+      text-align: center;
+    }
+
+    .main_div.center.extra-label .label {
+      position: absolute;
+      left: 40px;
+      top: 40%;
+      transform: translateY(-50%);
+    }
+
+    .center {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin: 20px auto;
+      max-width: 1400px;
+      padding: 0 12px;
+    }
+
+    .gallery-item {
+      flex: 0 1 340px;
+      max-width: 380px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .gallery-item .desc {
+      padding: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-item { flex-basis: 48%; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-item { flex-basis: 100%; }
+    }
+
+    .back-link, .button {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 24px;
+      background-color: #3b7da1;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+    }
+
+    #overlay {
+      display: none;             
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+
+    .overlay-card {
+      background: #79b1d2;
+      border-radius: 10px;
+      padding: 20px 24px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      position: relative;
+    }
+
+    .overlay-close {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      font-size: 18px;
+      line-height: 1;
+      background: #3b7da1;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+
+    address {
+      font-style: normal;
+      line-height: 1.6;
+    }
+  </style>
 </head>
-<style>
-body {
-    background-color: rgba(223, 243, 255, 0.7);
-    background-size: cover;
-    font-family: Arial, sans-serif;
-}
 
-.main_div {
-    text-align: center;
-    background-color: #79b1d2;
-    padding: 10px;
-    border-radius: 6px;
-}
-
-.main_div.center {
-    padding: 30px 120px;
-    box-sizing: border-box;
-}
-
-.main_div.center.extra-label {
-    position: relative;
-    padding-left: 200px;
-}
-
-.main_div.center.extra-label h3 {
-    margin: 0 0 8px;
-    text-align: center;
-}
-
-.main_div.center.extra-label .label {
-    position: absolute;
-    left: 40px;
-    top: 40%;
-    transform: translateY(-50%);
-}
-
-
-.center {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-    margin: 20px auto;
-    max-width: 1400px;
-}
-
-.gallery-item {
-    flex: 0 1 340px;
-    max-width: 380px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #fff;
-}
-
-.gallery-item img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.gallery-item .desc {
-    padding: 12px;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    .gallery-item {
-        flex-basis: 48%;
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-item {
-        flex-basis: 100%;
-    }
-}
-
- .back-link {
-            display: inline-block;
-            margin-top: 24px;
-            padding: 12px 24px;
-            background-color: #3b7da1;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 6px;
-        }
-
-</style>
 <body>
-    <div class="main_div center">
-    <h1 class="center">Velkommen til Booby´s hotel booking sted</h1>
+  <div class="main_div center">
+    <h1 class="center">Velkommen til Bobby´s hotel booking sted</h1>
     <h3 class="center">Hvor vil du have dit ophold til at være?</h3>
-    </div>
-        
-    <div class="gallery">
+  </div>
+
+  <div class="gallery">
     <div class="gallery-item">
-            <a href="hyttevedsø.html">
-                <img src="hyttevedsø.jpg" alt="hytte ved søen" width="600" height="400">
-            </a>
-    <div class="desc">Book her?</div>
+      <a href="hyttevedsø.html">
+        <img src="hyttevedsø.jpg" alt="Hytte ved søen" width="600" height="400">
+      </a>
+      <div class="desc">Book her?</div>
     </div>
 
     <div class="gallery-item">
-            <a href="hyttevedbjerngen.html">
-                <img src="hytteibjergene.jpg" alt="hytte ved bjerngen" width="600" height="200">
-            </a>
-    <div class="desc">Book her?</div>
+      <a href="hyttevedbjergene.html">
+        <img src="hytteibjergene.jpg" alt="Hytte i bjergene" width="600" height="200">
+      </a>
+      <div class="desc">Book her?</div>
     </div>
-    </div>
-   
-    <div class="gallery">
+  </div>
+
+  <div class="gallery">
     <div class="gallery-item">
-            <a href="hyttevedstrand.html">
-                <img src="hytte.jpg" alt="hytte ved stranden" width="600" height="400">
-            </a>
-    <div class="desc">Book her?</div>
+      <a href="hyttevedstrand.html">
+        <img src="hytte.jpg" alt="Hytte ved stranden" width="600" height="400">
+      </a>
+      <div class="desc">Book her?</div>
     </div>
 
     <div class="gallery-item">
-            <a href="hyttevedsø2.html">
-                <img src="hytte2.jpg" alt="hytte ved søen (2)" width="600" height="400">
-            </a>
-    <div class="desc">Book her?</div>
+      <a href="hyttevedsø2.html">
+        <img src="hytte2.jpg" alt="Hytte ved søen (2)" width="600" height="400">
+      </a>
+      <div class="desc">Book her?</div>
     </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="main_div center extra-label">
+  </div>
+
+  <div class="main_div center extra-label">
     <h3 class="center">Der er ikke flere hytter lige nu :(</h3>
     <p>Vi arbejder på at få flere hytter tilgængelige. Tjek venligst tilbage senere.</p>
-    <a class="back-link label" target="_blank" href="kontaket.html">kontak os her!</a>
-</div>
+
+    <button class="button label" type="button" id="contactBtn">Kontakt os her!</button>
+  </div>
+
+  <div id="overlay" role="dialog" aria-modal="true" aria-labelledby="kontakt-title">
+    <div class="overlay-card middleoverlay main_div">
+      <button class="overlay-close" type="button" id="closeOverlay" aria-label="Luk">✕</button>
+      <h3 id="kontakt-title" class="center" style="margin-top: 0;">Kontakt info</h3>
+      <address>
+        Mail: <a href="mailto:Booking@gmail.dk">Booking@gmail.dk</a><br>
+        Telefon: +45 12 34 56 78<br><br>
+        Besøg os:<br>
+        Vesterbrogade 10<br>
+        1020 København K<br>
+        Danmark
+      </address>
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById("overlay");
+    const openBtn = document.getElementById("contactBtn");
+    const closeBtn = document.getElementById("closeOverlay");
+
+    function showOverlay() { overlay.style.display = "flex"; }
+    function closeOverlay() { overlay.style.display = "none"; }
+
+    openBtn.addEventListener("click", showOverlay);
+    closeBtn.addEventListener("click", closeOverlay);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeOverlay();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && overlay.style.display === "flex") {
+        closeOverlay();
+      }
+    });
+  </script>
 </body>
 </html>

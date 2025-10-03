@@ -98,7 +98,7 @@
 
             if (checkinInput && checkoutInput) {
                 checkinInput.addEventListener('change', () => {
-                    checkoutInput.min = checkinInput.value || today; // ensure checkout is not before check-in
+                    checkoutInput.min = checkinInput.value || today; 
                     if (checkoutInput.value && checkoutInput.value < checkoutInput.min) {
                         checkoutInput.value = checkoutInput.min;
                     }

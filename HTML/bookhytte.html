@@ -86,35 +86,6 @@
         </form>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.querySelector('form[action="submit_booking.html"]');
-            if (form) {
-                form.addEventListener('submit', async (event) => {
-                    event.preventDefault();
-
-                    const fd = new FormData(form);
-
-                    try {
-                        const res = await fetch('http://localhost:5189/book', {
-                            method: 'POST',
-                            body: fd,
-                        });
-
-                        const data = await res.json().catch(() => ({}));
-
-                        if (!res.ok || !data.ok) {
-                            const message = data.error || `HTTP ${res.status}`;
-                            alert('Kunne ikke gemme booking: ' + message);
-                            return;
-                        }
-
-                        window.location.href = 'submit_booking.html';
-                    } catch (err) {
-                        alert('Der skete en fejl: ' + err.message);
-                    }
-                });
-            }
-
             const today = new Date().toISOString().split('T')[0];
             const dateInputs = document.querySelectorAll('input[type="date"]');
             dateInputs.forEach((input) => {
@@ -132,7 +103,6 @@
                     }
                 });
             }
-        });
     </script>
 </body>
 </html>

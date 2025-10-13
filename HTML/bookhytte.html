@@ -1,108 +1,190 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book hytte</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-color: rgba(223, 243, 255, 0.7);
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book hytte</title>
+  <link rel="stylesheet" href="styles.css">
 
-        .main_div {
-            max-width: 640px;
-            margin: 40px auto;
-            padding: 32px;
-            background-color: #79b1d2;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-        }
+  <style>
+    :root{
+      --blue-950:#081830;
+      --blue-900:#0a1e3a;
+      --accent:#79b1d2;
+      --ink:#e9f2ff;
+      --ink-dim:#cfe3ff;
+      --border:rgba(255,255,255,.18);
+      --glass:rgba(255,255,255,.06);
+      --btn:#3b7da1;
+    }
 
-        .main_div h1 {
-            margin: 0 0 16px;
-            text-align: center;
-        }
+    body{
+      margin:0;
+      font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--ink);
+      min-height:100svh;
+      background:
+        radial-gradient(circle at 25% 15%, rgba(120,174,234,.10) 0 220px, transparent 230px),
+        radial-gradient(circle at 80% 30%, rgba(47,111,179,.10) 0 180px, transparent 190px),
+        linear-gradient(transparent 0 23px, rgba(255,255,255,.04) 23px 24px),
+        linear-gradient(90deg, transparent 0 23px, rgba(255,255,255,.04) 23px 24px),
+        linear-gradient(180deg, var(--blue-900), var(--blue-950));
+      background-size: 100% 100%,100% 100%,24px 24px,24px 24px,100% 100%;
+    }
 
-        form {
-            display: grid;
-            gap: 16px;
-        }
+    .wrap{
+      max-width: 880px;
+      margin: clamp(16px, 4vw, 40px) auto;
+      padding: 24px;
+    }
+    .hero{ text-align:center; margin-bottom: 18px; }
+    .hero h1{ margin:0 0 8px; font-size: clamp(24px,3.2vw,36px); }
+    .hero p{ margin:0; color: var(--ink-dim); }
 
-        label {
-            font-weight: bold;
-        }
+    .main_div{
+      margin: 18px auto 40px;
+      padding: clamp(20px, 3vw, 32px);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.05));
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
+      backdrop-filter: blur(8px);
+    }
 
-        input,
-        select {
-            padding: 10px;
-            border: 1px solid #6a99b8;
-            border-radius: 6px;
-            font-size: 16px;
-        }
+    form{ display:grid; gap: 16px; }
+    .row{ display:grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 0; }
+    .full{ grid-column: 1 / -1; }
 
-        button[type="submit"] {
-            padding: 12px;
-            background-color: #3b7da1;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    label{
+      display:block;
+      font-weight: 800;
+      margin: 4px 0 8px;
+      letter-spacing:.2px;
+    }
 
-        button[type="submit"]:hover {
-            background-color: #2f6784;
-        }
-    </style>
+    input, select{
+      width:100%;
+      padding: 14px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(121,177,210,.45);
+      background: rgba(6,18,36,.35);
+      color: var(--ink);
+      outline: none;
+      font-size: 16px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+      transition: box-shadow .2s, border-color .2s, transform .05s;
+      background-clip: padding-box; 
+      appearance: none;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator{
+      filter: invert(1) opacity(.85);
+      cursor: pointer;
+    }
+    input::placeholder{ color:#b9d0ef; opacity:.7; }
+    input:focus-visible, select:focus-visible{
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(121,177,210,.25);
+    }
+    input:active, select:active{ transform: translateY(1px); }
+
+    .help{ margin:6px 0 0; font-size:14px; color: var(--ink-dim); }
+
+    .actions{
+      display:flex; gap: 12px; align-items:center; justify-content:flex-end;
+      grid-column: 1 / -1;
+      margin-top: 4px;
+    }
+    button[type="submit"]{
+      position: relative;
+      padding: 12px 20px;
+      background: linear-gradient(180deg, var(--btn), #2f6784);
+      color:#fff; border:1px solid rgba(255,255,255,.25);
+      border-radius: 12px;
+      font-size: 16px; cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,.35);
+      transition: transform .06s ease, filter .2s ease;
+    }
+    button[type="submit"]::after{
+      content:"";
+      position:absolute; inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,.55), transparent 40% 60%, rgba(255,255,255,.25));
+      mix-blend-mode: overlay; opacity:.25;
+      border-radius: inherit;
+      pointer-events:none;
+    }
+    button[type="submit"]:hover{ filter: brightness(1.07) }
+    button[type="submit"]:active{ transform: translateY(1px) }
+
+    @media (max-width: 720px){
+      .row{ grid-template-columns: 1fr; row-gap: 16px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="main_div">
-        <h1>Book dit ophold ved hytten</h1>
-        <form action="submit_booking.html" method="post">
-            <label for="name">Navn:</label>
-            <input type="text" id="name" name="name" required>
+  <div class="wrap">
+    <header class="hero">
+      <h1>Book dit ophold ved hytten</h1>
+    </header>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+    <section class="main_div">
+      <form action="submit_booking.html" method="post" novalidate>
+        <div class="full">
+          <label for="name">Navn</label>
+          <input type="text" id="name" name="name" placeholder="F.eks. Bobby Bobsen" required>
+        </div>
 
-            <label for="checkin">Check-in dato:</label>
+        <div class="full">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="dig@eksempel.dk" required>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="checkin">Check-in dato</label>
             <input type="date" id="checkin" name="checkin" required>
-
-            <label for="checkout">Check-out dato:</label>
+          </div>
+          <div>
+            <label for="checkout">Check-out dato</label>
             <input type="date" id="checkout" name="checkout" required>
+          </div>
+        </div>
 
-            <label for="room">Værelsestype:</label>
-            <select id="room" name="room" required>
-                <option value="double">Dobbeltværelse</option>
-                <option value="4-personersværelse">4-personersværelse</option>
-            </select>
-            <p for="room">Hvis mere en 4 personer ring på nr: +45 12 34 56 78</p>
+        <div class="full">
+          <label for="room">Værelsestype</label>
+          <select id="room" name="room" required>
+            <option value="" disabled selected>Vælg en type…</option>
+            <option value="double">Dobbeltværelse</option>
+            <option value="4-personersværelse">4-personersværelse</option>
+          </select>
+          <p class="help">Hvis mere end 4 personer: ring +45 12 34 56 78</p>
+        </div>
 
-            <button type="submit">Book nu</button>
-        </form>
-    </div>
-    <script>
-            const today = new Date().toISOString().split('T')[0];
-            const dateInputs = document.querySelectorAll('input[type="date"]');
-            dateInputs.forEach((input) => {
-                input.min = today;
-            });
+        <div class="actions">
+          <button type="submit">Book nu</button>
+        </div>
+      </form>
+    </section>
+  </div>
 
-            const checkinInput = document.getElementById('checkin');
-            const checkoutInput = document.getElementById('checkout');
+  <script>
+    const today = new Date().toISOString().split('T')[0];
+    document.querySelectorAll('input[type="date"]').forEach((input) => { input.min = today; });
 
-            if (checkinInput && checkoutInput) {
-                checkinInput.addEventListener('change', () => {
-                    checkoutInput.min = checkinInput.value || today;
-                    if (checkoutInput.value && checkoutInput.value < checkoutInput.min) {
-                        checkoutInput.value = checkoutInput.min;
-                    }
-                });
-            }
-    </script>
+    const checkinInput = document.getElementById('checkin');
+    const checkoutInput = document.getElementById('checkout');
+
+    function syncCheckoutMin(){
+      const min = checkinInput.value || today;
+      checkoutInput.min = min;
+      if (checkoutInput.value && checkoutInput.value < min) {
+        checkoutInput.value = min;
+      }
+    }
+    if (checkinInput && checkoutInput){
+      checkinInput.addEventListener('change', syncCheckoutMin);
+      syncCheckoutMin();
+    }
+  </script>
 </body>
 </html>

@@ -7,31 +7,71 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
+    :root{
+      --blue-900:#0a1e3a;
+      --blue-950:#081830;
+      --ink:#e9f2ff;
+      --glass: rgba(255,255,255,.06);
+      --glass-border: rgba(255,255,255,.15);
+      --accent:#78aeea;
+      --button:#3b7da1;
+    }
+
+    .glow {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--blue-900), var(--blue-950));
+    }
+    .glow::before{
+      content:"";
+      position:absolute; inset:-40%;
+      background:
+        radial-gradient(60% 40% at 30% 30%, rgba(120,174,234,.22), transparent 60%),
+        radial-gradient(50% 35% at 70% 70%, rgba(47,111,179,.28), transparent 60%);
+      filter: blur(20px);
+      animation: drift 18s linear infinite;
+    }
+    @keyframes drift {
+      0%   { transform: rotate(0deg)   translateX(0); }
+      50%  { transform: rotate(180deg) translateX(6%); }
+      100% { transform: rotate(360deg) translateX(0); }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .glow::before{ animation: none; }
+    }
+
+    *{ box-sizing: border-box; }
     body {
-      background-color: rgba(223, 243, 255, 0.7);
-      background-size: cover;
       font-family: Arial, sans-serif;
       margin: 0;
+      color: var(--ink);
+      background: var(--blue-900);
     }
+    a{ color: var(--ink); }
 
     .main_div {
       text-align: center;
-      background-color: #79b1d2;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border: 1px solid var(--glass-border);
       padding: 10px;
-      border-radius: 6px;
-      margin: 0 12px;
+      border-radius: 12px;
+      margin: 12px;
+      backdrop-filter: blur(6px);
     }
 
     .main_div.center {
       padding: 30px 120px;
-      box-sizing: border-box;
     }
 
     .middleoverlay{
       text-align: center;
-      background-color: #79b1d2;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border: 1px solid var(--glass-border);
       padding: 10px;
-      border-radius: 6px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
     }
 
     .main_div.center.extra-label {
@@ -69,10 +109,12 @@
     .gallery-item {
       flex: 0 1 340px;
       max-width: 380px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
       overflow: hidden;
-      background: #fff;
+      background: var(--glass);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 6px 24px rgba(0,0,0,.25);
     }
 
     .gallery-item img {
@@ -84,9 +126,15 @@
     .gallery-item .desc {
       padding: 12px;
       text-align: center;
+      color: var(--ink);
     }
 
     @media (max-width: 768px) {
+      .main_div.center{ padding: 20px; }
+      .main_div.center.extra-label{ padding-left: 20px; }
+      .main_div.center.extra-label .label{
+        position: static; transform: none; display: inline-block; margin-top: 12px;
+      }
       .gallery-item { flex-basis: 48%; }
     }
 
@@ -98,19 +146,23 @@
       display: inline-block;
       margin-top: 24px;
       padding: 12px 24px;
-      background-color: #3b7da1;
+      background-color: var(--button);
       color: #fff;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 10px;
       cursor: pointer;
-      border: none;
+      border: 1px solid rgba(255,255,255,.2);
+    }
+    .back-link:hover, .button:hover{
+      filter: brightness(1.08);
     }
 
+    /* —— Overlay —— */
     #overlay {
-      display: none;             
+      display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.55);
       justify-content: center;
       align-items: center;
       z-index: 1000;
@@ -118,13 +170,16 @@
     }
 
     .overlay-card {
-      background: #79b1d2;
-      border-radius: 10px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
       padding: 20px 24px;
       max-width: 480px;
       width: 100%;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
       position: relative;
+      color: var(--ink);
+      backdrop-filter: blur(8px);
     }
 
     .overlay-close {
@@ -133,10 +188,10 @@
       top: 8px;
       font-size: 18px;
       line-height: 1;
-      background: #3b7da1;
+      background: var(--button);
       color: #fff;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 6px 10px;
       cursor: pointer;
     }
@@ -149,6 +204,9 @@
 </head>
 
 <body>
+  <!-- Glow baggrund -->
+  <div class="glow" aria-hidden="true"></div>
+
   <div class="main_div center">
     <h1 class="center">Velkommen til Bobby's hotel booking sted</h1>
     <h3 class="center">Hvor vil du have dit ophold til at være?</h3>
@@ -217,7 +275,7 @@
     function closeOverlay() { overlay.style.display = "none"; }
 
     openBtn.addEventListener("click", showOverlay);
-    closeBtn.addEventListener("click", closeOverlay);
+    closeBtn && closeBtn.addEventListener("click", closeOverlay);
     overlay.addEventListener("click", (e) => {
       if (e.target === overlay) closeOverlay();
     });

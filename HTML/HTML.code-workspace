@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "HTML",
+			"path": "."
+		},
+		{
+			"name": "booking-api",
+			"path": "../../Desktop/booking-api"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "HTML"
+	}
+}

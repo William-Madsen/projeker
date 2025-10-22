@@ -3,48 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velkommen | Min hjemmeside</title>
+    <title>Projekter</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
-<body>
-    <header class="hero">
+<body class="page-projekter">
+    <header class="hero hero--projects">
         <div class="wrapper">
-            <p class="tagline">Velkommen til mit lille hjørne af nettet</p>
-            <h1>Jeg er glad for at du kigger forbi</h1>
-            <p class="lead">Her samler jeg mine projekter, fortæller lidt om mig selv og viser hvad jeg arbejder med.</p>
+            <p class="tagline">Projekter</p>
+            <h1>Et udpluk af det jeg bygger</h1>
+            <p class="lead">Fra skoleopgaver til nysgerrige eksperimenter – her er de projekter, jeg er mest stolt af.</p>
             <div class="hero-actions">
-                <a class="button primary" href="projekter.html">Se projekterne</a>
-                <a class="button secondary" href="om_mig.html">Lær mig at kende</a>
+                <a class="button primary" href="#projektliste">Gå til projekterne</a>
+                <a class="button secondary" href="forside.html">Tilbage til forsiden</a>
             </div>
         </div>
     </header>
-    <main class="wrapper">
-        <section class="card-grid">
-            <a href="projekter.html" class="info-card">
-                <h2>Projekter</h2>
-                <p>Få et overblik over det jeg har bygget, og hvilke teknologier jeg leger med.</p>
-            </a>
-            <a href="om_mig.html" class="info-card">
-                <h2>Om mig</h2>
-                <p>Lær mere om hvem jeg er, og hvordan jeg arbejder til dagligt.</p>
-            </a>
-            <a href="erfaring.html" class="info-card">
-                <h2>Erfaring</h2>
-                <p>Dyk ned i mine erfaringer, styrker og hvad jeg kan tilbyde.</p>
-            </a>
-        </section>
-        <section class="about-highlight">
-            <div class="about-text">
-                <h2>Hvad kan du forvente?</h2>
-                <p>Jeg vil lave mit bedste for at levere høj kvalitet i alle mine projekter.<br>
-                     Jeg er altid åben for nye udfordringer og muligheder for at lære og vokse.</p>
-            </div>
-            <div class="about-illustration" aria-hidden="true"></div>
-        </section>
+    <main>
+        <div class="wrapper">
+            <section id="projektliste" class="project-grid">
+                <article class="project-card">
+                    <h2>Personlig hjemmeside</h2>
+                    <ul class="project-tags">
+                        <li>HTML</li>
+                        <li>Design</li>
+                    </ul>
+                    <p>Mit eget digitale visitkort, hvor du kan finde info om mig, mine projekter og min erfaring.</p>
+                </article>
+                <article class="project-card">
+                    <h2>Hotelbooking side</h2>
+                    <ul class="project-tags">
+                        <li>Frontend</li>
+                         <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                    <p>En bookingside til hytter, hvor brugeren kan bladre, vælge ophold og få det samlede overblik.</p>
+                </article>
+                <article class="project-card">
+                    <h2>Virtual Mouse</h2>
+                    <ul class="project-tags">
+                        <li>Python</li>
+                        <li>Computer vision</li>
+                    </ul>
+                    <p>Et eksperiment hvor jeg styrer musen med håndbevægelser foran kameraet – ren nørdet sjov.</p>
+                </article>
+                <article class="project-card">
+                    <h2>Lommeregner i C#</h2>
+                    <ul class="project-tags">
+                        <li>C#</li>
+                        <li>Desktop</li>
+                    </ul>
+                    <p>En simpel men robust lommeregner, der klarer de vigtigste matematiske funktioner.</p>
+                </article>
+                <article class="project-card">
+                    <h2>Sensorprojekt</h2>
+                    <ul class="project-tags">
+                        <li>Hardware</li>
+                        <li>Data</li>
+                    </ul>
+                    <p>En prototype hvor jeg tester forskellige sensorer og indsamler data til visualisering.</p>
+                </article>
+                <article class="project-card">
+                    <h2>Butik hjemmeside</h2>
+                    <ul class="project-tags">
+                        <li>Frontend</li>
+                         <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                    <p>En butiksløsning hvor brugeren kan lægge varer i kurven og få en følelse af et rigtigt køb.</p>
+                </article>
+                <article class="project-card">
+                    <h2>Clicker spil</h2>
+                    <ul class="project-tags">
+                        <li>JavaScript</li>
+                        <li>Spil</li>
+                    </ul>
+                    <p>Et simpelt clicker-spil bygget for at eksperimentere med game loops og progression.</p>
+                    <a class="project-link" href="http://awi01.skp-dp.sde.dk/game/">Prøv spillet</a>
+                </article>
+            </section>
+
+            <section class="project-process surface-card">
+                <h2>Sådan arbejder jeg med projekter</h2>
+                <p>Jeg kan godt lide, når processen er overskuelig og kreativ på samme tid. Det gør det nemmere at dele viden og udvikle sig sammen med andre.</p>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <span class="process-index">1</span>
+                        <h3>Ide &amp; Skab</h3>
+                        <p>Jeg brainstormer idéer og skaber en konceptuel ramme for projektet.</p>
+                    </div>
+                    <div class="process-step">
+                        <span class="process-index">2</span>
+                        <h3>Design &amp; prototype</h3>
+                        <p>Jeg laver en prototype for at se om det overhovedet kan noget.</p>
+                    </div>
+                    <div class="process-step">
+                        <span class="process-index">3</span>
+                        <h3>Udvikling &amp; problemløsning</h3>
+                        <p>Jeg bygger funktionerne, tester med andre og forbedrer softwaren i små skridt.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
     <footer class="site-footer">
         <div class="wrapper">
-            <p>&copy; 2025 Min hjemmeside. Alle rettigheder forbeholdes.</p>
+            <p>&copy; 2025 Williams hjemmeside. Alle rettigheder forbeholdes.</p>
         </div>
     </footer>
 </body>

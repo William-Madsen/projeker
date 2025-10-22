@@ -3,69 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velkommen | Min hjemmeside</title>
+    <title>Om mig</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
-<body>
-    <header class="hero">
+<body class="page-om">
+    <header class="hero hero--profile">
         <div class="wrapper">
-            <p class="tagline"></p>
-            <h1>Mit navn er William Lund Madsen</h1>
-            <p class="lead">Du er ved Om mig sektionen, jeg vil fortælle lidt om mig selv.</p>
+            <p class="tagline">Lidt om mig</p>
+            <h1>Hej, jeg er William Lund Madsen</h1>
+            <p class="lead">IT-studerende fra Fyn, der elsker at kombinere gode idéer med kode og samarbejde.</p>
             <div class="hero-actions">
-                <a class="button primary" href="forside.html">Tilbage?</a>
+                <a class="button primary" href="Projekter.html">Se mine projekter</a>
+                <a class="button secondary" href="forside.html">Tilbage til forsiden</a>
             </div>
         </div>
     </header>
-    <main class="wrapper">
-        <section class="card-grid">
-            <div class="info-card">
-                <h2>Information</h2>
-                <p>Her kan du finde vigtig information om mig.</p>
-                <ul>
-                    <li>Alder: 16 år</li>
-                    <li>Bopæl: Fyn</li>
-                    <li>Uddannelse: IT-studerende</li>
-                    <li>Interesser: Programmering, teknologi, gaming</li>
-                </ul>
-            </div>
-            <div  class="info-card">
-                <h2>Om mig</h2>
-                <p>Her er nogen ting om mig:</p>
-                <ul>
-                    <li>Jeg er en engageret og passioneret person</li>
-                    <li>Jeg elsker at lære nye ting og udfordre mig selv</li>
-                    <li>Jeg er god til at arbejde både selvstændigt og i teams</li>
-                    <li>Jeg har en kreativ tilgang til problemløsning</li>
-                    <li>Jeg er altid åben for feedback og stræber efter at forbedre mig</li>
-                </ul>
-            </div>
+    <main>
+        <div class="wrapper">
+            <section class="profile-overview">
+                <article class="surface-card profile-card">
+                    <h2>Hvem er jeg?</h2>
+                    <p>Jeg er en nysgerrig og målrettet person, der brænder for programmering, teknologi og digital udvikling. Jeg motiveres af at forstå, hvordan ting fungerer, og finde smartere måder at få dem til at spille sammen. Jeg trives med at eksperimentere, udfordre mig selv og skabe løsninger, der gør hverdagen mere effektiv <br>– én linje kode ad gangen.</p>
+                </article>
+                <aside class="surface-card profile-meta">
+                    <h2>Hurtige fakta</h2>
+                    <div class="fact-grid">
+                        <div class="fact-item">
+                            <span class="fact-label">Alder</span>
+                            <span class="fact-value">16 år</span>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-label">Bopæl</span>
+                            <span class="fact-value">Fyn</span>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-label">Fokus</span>
+                            <span class="fact-value">Programmering</span>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-label">Interesser</span>
+                            <span class="fact-value">Programmering, teknologi, gaming</span>
+                        </div>
+                    </div>
+                </aside>
+            </section>
 
-            <div  class="info-card">
-                <h2>DAV</h2>
-                <p>IDK</p>
-            </div>
-        </section>
-        <section class="about-highlight">
-            <div class="about-text">
-                <h2>Hvad kan du forvente?</h2>
-                    <p>Jeg vil lave mit bedste for at levere høj kvalitet i alle mine projekter.<br>
-                     Jeg er altid åben for nye udfordringer og muligheder for at lære og vokse.</p>
-            </div>
-            <div class="about-illustration" aria-hidden="true"></div>
-        </section>
-    </main>   
-     <footer class="site-footer"></footer>
-    <section class="contact info-card">
-        <h2>Kontakt</h2>
-        <h3 class="Kontakt">Du er velkommen til at kontakte mig via e-mail eller telefon.</h3>
-            <h4>Email: Williamlundgho@gmail.com</h4>
-            <h4>Telefon: 41 13 55 11</h4>
-        </section>
-        <br>
+            <section class="values-grid">
+                <article class="value-card">
+                    <h3>Struktur</h3>
+                    <p>Jeg værdsætter struktur og orden i mit arbejde. Det hjælper mig med at holde fokus og sikre, at jeg når mine mål.</p>
+                </article>
+                <article class="value-card">
+                    <h3>Problemløser</h3>
+                    <p>Jeg elsker at finde løsninger på udfordringer. Jeg analyserer problemer fra forskellige vinkler og eksperimenterer med nye tilgange, indtil jeg finder den mest effektive løsning.</p>
+                </article>
+                <article class="value-card">
+                    <h3>Samarbejde / Alene</h3>
+                    <p>Jeg trives i teams, hvor vi kan sparre, hjælpe hinanden og holde humøret højt undervejs. Samtidig kan jeg også arbejde selvstændigt og tage ansvar for mine opgaver.</p>
+                </article>
+            </section>
+
+            <section class="quote-card surface-card">
+                <h2>Hverdags mig</h2>
+                <p>Jeg tager tingene, som de kommer, og prøver at få det bedste ud af dagen – med et smil, lidt musik og måske en god kop kakao ved siden af.</p>
+            </section>
+
+            <section class="contact-panel">
+                <div>
+                    <h2>Kontakt mig</h2>
+                    <p>Du er altid velkommen til at række ud, hvis du vil høre mere eller samarbejde på et projekt.</p>
+                </div>
+                <ul class="contact-list">
+                    <li>
+                        <span class="contact-label">GitHub</span>
+                        <a href="https://github.com/William-Madsen">William-Madsen</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">E-mail</span>
+                        <a href="mailto:Williamlundgho@gmail.com">Williamlundgho@gmail.com</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">Telefon</span>
+                        <a href="tel:+4541135511">41 13 55 11</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
     <footer class="site-footer">
         <div class="wrapper">
-            <p>&copy; 2025 Min hjemmeside. Alle rettigheder forbeholdes.</p>
+            <p>&copy; 2025 Williams hjemmeside. Alle rettigheder forbeholdes.</p>
         </div>
     </footer>
 </body>

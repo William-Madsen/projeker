@@ -78,6 +78,50 @@ a {
     flex-wrap: wrap;
 }
 
+.navbar {
+  background: linear-gradient(90deg, #2b3b8c, #1e3a8a);
+  padding: 10px 20px;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.center{
+    text-align: center;
+}
+
+.profile-image{
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+.navbar li {
+  color: white;
+  font-size: 18px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.navbar .right {
+display: flex;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.navbar .right li {
+  margin-left: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+a:hover{
+    color: rgb(161, 255, 132);
+}
+
 .button {
     display: inline-flex;
     align-items: center;
@@ -458,7 +502,6 @@ body.page-projekter {
     border-radius: var(--radius);
     padding: 2rem;
     box-shadow: var(--shadow);
-    text-align: left;
 }
 
 .value-card h3 {

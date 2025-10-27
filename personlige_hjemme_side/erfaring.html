@@ -150,8 +150,17 @@
     <h4 style="text-align: center;">Tak for du kikket med :)</h4>
     <footer class="site-footer">
         <div class="wrapper">
-            <p>&copy; 2025 Williams hjemmeside. Alle rettigheder forbeholdes.</p>
+            <p>&copy; <span id="current-year">2025</span> Williams hjemmeside. Alle rettigheder forbeholdes.</p>
         </div>
     </footer>
 </body>
+<script>
+   function updateCurrentYear() {
+            const currentYear = new Date().getFullYear();
+            return currentYear;
+        }
+        
+        document.getElementById('age-display').textContent = calculateAge() + ' år';
+        document.getElementById('current-year').textContent = updateCurrentYear();
+</script>
 </html>

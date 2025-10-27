@@ -28,7 +28,16 @@
             </div>
         </div>
     </header>
-    <main class="wrapper">
+     <main class="wrapper">
+    <section class="about-highlight">
+            <div class="about-text">
+                <h2>Hvad kan du forvente?</h2>
+                <p>Jeg opdaterer løbende siden med nye projekter, tanker og ideer. Kig gerne forbi igen, eller kontakt mig hvis du vil høre mere.</p>
+            </div>
+            <div class="about-illustration" aria-hidden="true"></div>
+        </section>
+        <br>
+        <br>
         <section class="card-grid">
             <a href="projekter.html" class="info-card">
                 <h2>Projekter</h2>
@@ -43,17 +52,20 @@
                 <p>Dyk ned i mine erfaringer, styrker og hvad jeg kan tilbyde.</p>
             </a>
         </section>
-        <section class="about-highlight">
-            <div class="about-text">
-                <h2>Hvad kan du forvente?</h2>
-                <p>Jeg opdaterer løbende siden med nye projekter, tanker og ideer. Kig gerne forbi igen, eller kontakt mig hvis du vil høre mere.</p>
-            </div>
-            <div class="about-illustration" aria-hidden="true"></div>
     </main>
     <footer class="site-footer">
         <div class="wrapper">
-            <p>&copy; 2025 Williams hjemmeside. Alle rettigheder forbeholdes.</p>
+             <p>&copy; <span id="current-year">2025</span> Williams hjemmeside. Alle rettigheder forbeholdes.</p>
         </div>
     </footer>
 </body>
+<script>
+   function updateCurrentYear() {
+            const currentYear = new Date().getFullYear();
+            return currentYear;
+        }
+        
+        document.getElementById('age-display').textContent = calculateAge() + ' år';
+        document.getElementById('current-year').textContent = updateCurrentYear();
+</script>
 </html>

@@ -37,6 +37,10 @@ a {
     text-align: center;
 }
 
+.left{
+    text-align: left;
+}
+
 .Kontakt{
     color: #389764;
     font-family:Verdana, Geneva, Tahoma, sans-serif

@@ -30,7 +30,32 @@
     </header>
     <main>
         <div class="wrapper">
-            <section id="projektliste" class="project-grid">
+              <section class="project-process surface-card">
+                <h2>Sådan arbejder jeg med projekter</h2>
+                <p>Jeg kan godt lide, når processen er overskuelig og kreativ på samme tid. Det gør det nemmere at dele viden og udvikle sig sammen med andre.</p>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <span class="process-index">1</span>
+                        <h3>Ide &amp; Skab</h3>
+                        <p>Jeg brainstormer idéer og skaber en konceptuel ramme for projektet.</p>
+                    </div>
+                    <div class="process-step">
+                        <span class="process-index">2</span>
+                        <h3>Design &amp; prototype</h3>
+                        <p>Jeg laver en prototype for at se om det overhovedet kan noget.</p>
+                    </div>
+                    <div class="process-step">
+                        <span class="process-index">3</span>
+                        <h3>Udvikling &amp; problemløsning</h3>
+                        <p>Jeg bygger funktionerne, tester med andre og forbedrer softwaren i små skridt.</p>
+                    </div>
+                </div>
+            </section>
+             <br>
+            <h2 class="center">Mine projekter</h2>
+            <br>
+            <section id="projektliste" class="project-grid left">
+              
                 <article class="project-card">
                     <h2>Personlig hjemmeside</h2>
                     <ul class="project-tags">
@@ -92,33 +117,22 @@
                 </article>
             </section>
 
-            <section class="project-process surface-card">
-                <h2>Sådan arbejder jeg med projekter</h2>
-                <p>Jeg kan godt lide, når processen er overskuelig og kreativ på samme tid. Det gør det nemmere at dele viden og udvikle sig sammen med andre.</p>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <span class="process-index">1</span>
-                        <h3>Ide &amp; Skab</h3>
-                        <p>Jeg brainstormer idéer og skaber en konceptuel ramme for projektet.</p>
-                    </div>
-                    <div class="process-step">
-                        <span class="process-index">2</span>
-                        <h3>Design &amp; prototype</h3>
-                        <p>Jeg laver en prototype for at se om det overhovedet kan noget.</p>
-                    </div>
-                    <div class="process-step">
-                        <span class="process-index">3</span>
-                        <h3>Udvikling &amp; problemløsning</h3>
-                        <p>Jeg bygger funktionerne, tester med andre og forbedrer softwaren i små skridt.</p>
-                    </div>
-                </div>
-            </section>
+          
         </div>
     </main>
     <footer class="site-footer">
         <div class="wrapper">
-            <p>&copy; 2025 Williams hjemmeside. Alle rettigheder forbeholdes.</p>
+             <p>&copy; <span id="current-year">2025</span> Williams hjemmeside. Alle rettigheder forbeholdes.</p>
         </div>
     </footer>
 </body>
+<script>
+   function updateCurrentYear() {
+            const currentYear = new Date().getFullYear();
+            return currentYear;
+        }
+        
+        document.getElementById('age-display').textContent = calculateAge() + ' år';
+        document.getElementById('current-year').textContent = updateCurrentYear();
+</script>
 </html>

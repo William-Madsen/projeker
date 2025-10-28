@@ -26,9 +26,10 @@ app.post('/login', (req, res) => {
     const jsonPath = path.join(__dirname, 'user.json');
     const raw = fs.readFileSync(jsonPath, 'utf8');
     const data = JSON.parse(raw);
-    const user = data && data.userdata ? data.userdata : {};
+    const list = Array.isArray(data.userdata) ? data.userdata : (data.userdata ? [data.userdata] : []);
 
-    if (username === user.username && password === user.password) {
+    const found = list.find(u => u.username === username && u.password === password);
+    if (found) {
       return res.send('Login succesfuldt');
     }
     return res.status(401).send('Forkert brugernavn eller adgangskode');

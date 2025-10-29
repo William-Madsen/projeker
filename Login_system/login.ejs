@@ -64,7 +64,7 @@
         button {
             width: 100%;
             padding: 12px;
-            background-color: #007bff;
+            background-color: #dc3545;
             color: white;
             border: none;
             border-radius: 3px;
@@ -73,14 +73,19 @@
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #b02a37;
         }
     </style>
 <body>
     <div class="login-container">
-        <h2 class="center">Du er nu log ind</h2>
+        <h2 class="center">Du er nu logget ind</h2>
+        <% if (typeof username !== 'undefined') { %>
+          <p class="center">Bruger: <strong><%= username %></strong></p>
+        <% } %>
 
-            <button type="submit">Log ud?</button>
+        <form method="POST" action="/logout">
+          <button type="submit">Log ud</button>
+        </form>
     </div>
 </body>
 </html>

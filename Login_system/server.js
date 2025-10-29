@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const session = require('express-session');
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -14,6 +15,16 @@ app.use(express.static('public'));
 // Parse form bodies
 app.use(express.urlencoded({ extended: true }));
 
+// Sessions
+app.use(
+  session({
+    secret: 'dev-secret',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 1000 * 60 * 60 },
+  })
+);
+
 // home route
 app.get('/', (req, res) => {
   res.render('frontside', { title: 'Login System' });
@@ -22,6 +33,12 @@ app.get('/', (req, res) => {
 // signup route
 app.get('/signup', (req, res) => {
   res.render('signup', { title: 'Sign Up' });
+});
+
+// logged-in page
+app.get('/login', (req, res) => {
+  if (!req.session.user) return res.redirect('/');
+  res.render('login', { title: 'Logget ind', username: req.session.user.username });
 });
 
 // handle login by reading user.json
@@ -35,13 +52,21 @@ app.post('/login', (req, res) => {
 
     const found = list.find(u => u.username === username && u.password === password);
     if (found) {
-      return res.send('Login succesfuldt');
+      req.session.user = { username: found.username };
+      return res.redirect('/login');
     }
     return res.status(401).render('frontside', { title: 'Login System', alert: 'Ugyldigt brugernavn eller adgangskode' });
   } catch (err) {
     console.error('Fejl ved læsning af user.json:', err);
     return res.status(500).send('Server fejl');
   }
+});
+
+// logout
+app.post('/logout', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('/');
+  });
 });
 
 // signup handler

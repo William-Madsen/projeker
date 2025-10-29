@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const session = require('express-session');
+const bcrypt = require('bcryptjs');
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -50,8 +51,8 @@ app.post('/login', (req, res) => {
     const data = JSON.parse(raw);
     const list = Array.isArray(data.userdata) ? data.userdata : (data.userdata ? [data.userdata] : []);
 
-    const found = list.find(u => u.username === username && u.password === password);
-    if (found) {
+    const found = list.find(u => u.username === username);
+    if (found && bcrypt.compareSync(password, found.password)) {
       req.session.user = { username: found.username };
       return res.redirect('/login');
     }
@@ -95,7 +96,8 @@ app.post('/signup', (req, res) => {
       return res.status(400).render('signup', { title: 'Sign Up', alert: 'Brugernavnet er allerede i brug' });
     }
 
-    data.userdata.push({ username, password });
+    const hashed = bcrypt.hashSync(password, 10);
+    data.userdata.push({ username, password: hashed });
     fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2), 'utf8');
 
     return res.status(201).render('frontside', { title: 'Login System', alert: 'Bruger oprettet. Log ind.' });

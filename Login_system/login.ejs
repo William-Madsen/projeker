@@ -33,9 +33,7 @@
             padding: 7px;
             border-radius: 5px;
             margin-top: 2px;
-            display: block;
-            text-decoration: none;
-            color: inherit;
+    
         }
 
         .logo {
@@ -80,36 +78,9 @@
     </style>
 <body>
     <div class="login-container">
-        <h2 class="center">Login</h2>
-        <form id="loginForm" method="POST" action="/login">
-            <div class="form-group">
-                <label for="username">Brugernavn:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="password">Adgangskode:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            
-            <!-- Submit button (no invalid href on wrapper) -->
-            <button type="submit">Log ind</button>
+        <h2 class="center">Du er nu log ind</h2>
 
-            <p class="center">_________________________________</p>
-            <br>
-
-            <!-- Signup link points to Express route -->
-            <a href="/signup" class="signup">Sign up</a>
-
-        </form>
-
-        <% if (typeof alert !== 'undefined') { %>
-            <script>
-                alert("<%= alert %>");
-            </script>
-        <% } %>     
-
-
+            <button type="submit">Log ud?</button>
     </div>
 </body>
 </html>

@@ -28,7 +28,7 @@ app.get('/signup', (req, res) => {
 app.post('/login', (req, res) => {
   const { username, password } = req.body || {};
   try {
-    const jsonPath = path.join(__dirname, 'user.json');
+    const jsonPath = path.join(__dirname, 'user', 'user.json');
     const raw = fs.readFileSync(jsonPath, 'utf8');
     const data = JSON.parse(raw);
     const list = Array.isArray(data.userdata) ? data.userdata : (data.userdata ? [data.userdata] : []);
@@ -55,7 +55,7 @@ app.post('/signup', (req, res) => {
       return res.status(400).render('signup', { title: 'Sign Up', alert: 'Adgangskode og Gentag adgangskode skal være ens' });
     }
 
-    const jsonPath = path.join(__dirname, 'user.json');
+    const jsonPath = path.join(__dirname, 'user', 'user.json');
     let data = { userdata: [] };
     if (fs.existsSync(jsonPath)) {
       const raw = fs.readFileSync(jsonPath, 'utf8');

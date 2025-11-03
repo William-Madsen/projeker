@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs');
 const app = express();
 
 // Port til serveren (brug 3000 som standard)
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 // Konfigurer EJS på mappe med .ejs-filer
 app.set('view engine', 'ejs');

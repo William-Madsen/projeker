@@ -8,17 +8,12 @@ const bcrypt = require('bcryptjs');
 // Opret Express app
 const app = express();
 
-// Port til serveren (brug miljøvariabel eller 3000 som standard)
+// Port til serveren (brug 3000 som standard)
 const port = process.env.PORT || 3000;
 
-// Konfigurer EJS som view engine og peg på mappe med .ejs-filer
+// Konfigurer EJS på mappe med .ejs-filer
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/'));
-
-// Server statiske filer fra mappen /public (fx CSS/JS/billeder)
-app.use(express.static('public'));
-// Parse form-data (application/x-www-form-urlencoded) så req.body virker
-app.use(express.urlencoded({ extended: true }));
 
 // Konfigurer sessioner (gemmer et lille login-token i en cookie)
 app.use(
@@ -46,15 +41,15 @@ app.get('/login', (req, res) => {
   res.render('login', { title: 'Logget ind', username: req.session.user.username });
 });
 
-// Håndter login: læs brugere fra user/user.json og sammenlign med bcrypt
+// Håndter login: læs brugere fra user.json og sammenlign med inpute
 app.post('/login', (req, res) => {
   const { username, password } = req.body || {};
   try {
-    // Find og læs brugerdatabase (JSON-fil)
+    // Find og læs brugerdatabase (user.json)
     const jsonPath = path.join(__dirname, 'user', 'user.json');
     const raw = fs.readFileSync(jsonPath, 'utf8');
     const data = JSON.parse(raw);
-    // Sørg for at have en liste (array) af brugere
+    // Sørg for at have en liste af brugere
     const list = Array.isArray(data.userdata) ? data.userdata : (data.userdata ? [data.userdata] : []);
 
     // Find bruger med matching brugernavn
@@ -68,7 +63,7 @@ app.post('/login', (req, res) => {
     // Forkert login -> vis fejl på forsiden
     return res.status(401).render('frontside', { title: 'Login System', alert: 'Ugyldigt brugernavn eller adgangskode' });
   } catch (err) {
-    // Hvis der er fejl ved læsning/parsing, log og send 500
+    // Hvis der er fejl ved læsning af siden, log og send 500
     console.error('Fejl ved læsning af user.json:', err);
     return res.status(500).send('Server fejl');
   }
@@ -81,7 +76,7 @@ app.post('/logout', (req, res) => {
   });
 });
 
-// Håndter signup: valider felter, tjek dublet, hash kodeord og gem i user/user.json
+// Håndter signup: valider felter, tjek dublet, hash kodeord og gem i user.json
 app.post('/signup', (req, res) => {
   const { username, password, confirmPassword } = req.body || {};
   try {

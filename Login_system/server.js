@@ -84,17 +84,19 @@ app.post('/signup', (req, res) => {
     if (!username || !password || !confirmPassword) {
       return res.status(400).render('signup', { title: 'Sign Up', alert: 'Udfyld alle felter' });
     }
+    // Tjek at adgangskode og bekræftelse matcher
     if (password !== confirmPassword) {
       return res.status(400).render('signup', { title: 'Sign Up', alert: 'Adgangskode og Gentag adgangskode skal være ens' });
     }
 
-    // Indlæs eksisterende brugere (eller opret tom liste)
+    // Indlæs eksisterende brugere fra Databasen
     const jsonPath = path.join(__dirname, 'user', 'user.json');
     let data = { userdata: [] };
     if (fs.existsSync(jsonPath)) {
       const raw = fs.readFileSync(jsonPath, 'utf8');
       data = JSON.parse(raw);
     }
+    // Sørg for at have en liste af brugere
     if (!Array.isArray(data.userdata)) {
       data.userdata = data.userdata ? [data.userdata] : [];
     }

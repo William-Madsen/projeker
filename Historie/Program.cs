@@ -1,0 +1,221 @@
+﻿
+
+Console.WriteLine("Velkommen");
+Console.WriteLine("lad os starte...");
+Console.WriteLine("-----------------------------------");
+Thread.Sleep(1000); // Venter 1 sekunder
+
+Console.WriteLine("Du vågnede på et mærkeligt sted. Du vidste ikke hvor du var, eller hvornår du faldt hen igen. Noget tid efter du vågnede, vidste du stadig ikke hvor du var, men der var en bekendt stemme, du kunne høre ude fra døren.");
+Console.ReadKey(true); // Venter på brugerinput
+
+Console.WriteLine("Det var ikke en stemme, du havde hørt før, men alligevel føltes den meget bekendt - som om du havde hørt den før eller noget lignende. Du tænkte ikke meget over det, men alligevel vidste du bare, at den var der.");
+Console.ReadKey(true); // Venter på brugerinput
+
+Console.WriteLine("Du begyndte at kigge dig lidt omkring. Da du begyndte at rejse dig, kunne du godt mærke, at der var noget anderledes, men ikke helt hvad. Så du prøvede at kigge efter et spejl, men kunne ikke finde et. 'Hvad gør jeg så?' tænkte du.");
+Console.ReadKey(true); // Venter på brugerinput
+
+Console.WriteLine("Du ville prøve at finde en vej ud. Du kunne se, at der var noget lys fra under døren og igennem et lille vindue, du ikke kunne nå. Du begyndte at tænke: 'Er jeg blevet fanget eller noget? Hvad sker der her??'");
+Console.ReadKey(true); // Venter på brugerinput
+
+Console.WriteLine("Du havde kun én mulighed - det var at gå mod døren. Du fandt håndtaget og prøvede at trække lidt på det, men det gav sig ikke. Du følte dig lige pludselig meget træt. Du kunne ikke finde over til sengen - bam! - så var du på gulvet.");
+Console.ReadKey(true); // Venter på brugerinput
+
+string valg_1;
+string valg_2;
+
+do
+{
+    Console.WriteLine("-----------------------------------");
+    Console.WriteLine("Hvad vil du gøre nu?");
+    Console.WriteLine("1. Blive liggende...");
+    Console.WriteLine("2. Rejse dig op...");
+    valg_1 = Console.ReadLine() ?? "";
+
+    if (valg_1 == "1")
+    {
+        Console.WriteLine("Du valgte at blive liggende...");
+        Thread.Sleep(1000); // Venter 1 sekunder
+        Console.WriteLine("");
+
+        Console.WriteLine("Da du lå der, kunne du høre, at der var en, der kom tættere på døren. Du kunne ikke høre stemmen, men du tænkte nok, det var den person/stemme, du hørte for lidt tid siden.");
+        Console.WriteLine("Du håbede bare, det var noget godt og ikke en eller anden, som du ikke kendte.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Personen åbnede døren efter at have fumlet lidt med den. Du kunne ikke helt se, hvem det var, men du kunne se en normal person, tænkte du, da de havde kropform som sådan. Der var et skarpt lys bagved den ting, der var der.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du blinkede lidt, og efter noget tid kunne du se noget, du ikke havde set før - en elf, tænkte du. Men den lignede ikke en elf. Du var lidt i tvivl, så du sagde: Hvem... hvad er du?");
+        Console.WriteLine("Den kom med svar: Kan du ikke kende din mor?");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("MOR? sagde du. Du begyndte at tænke: Jeg synes da, der var noget mærkeligt, da jeg vågnede, og jeg vidste heller ikke, hvor jeg var.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du tog din hånd op til dit øre, da du havde hørt, at alfer har spidse ører. Da du følte på dit øre, startede det fra hovedet af.");
+        Console.WriteLine("Til at starte med føltes det rigtigt, men lige så stille, som du kom længere og længere ud, kunne du godt begynde at se, at der var noget, der var galt her.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du rejste dig hurtigt op. Du tog fat i det et øjeblik, og så var det, som om det gav et klik. Du sagde: Cecilie! Efter at have stillet dette spørgsmål kom der et højt Ja! fra moren Cecilie. Du vågnede igen...");
+
+    }
+    else if (valg_1 == "2")
+    {
+        Console.WriteLine("Du valgte at rejse dig op...");
+        Thread.Sleep(1000); // Venter 1 sekunder
+        Console.WriteLine("");
+
+        Console.WriteLine("Du lå stille og roligt. Du tænkte, at det var mærkeligt - der var helt stille. Du rejste dig op og gik hen til døren, tog lidt på håndtaget, og den var åben.");
+        Console.WriteLine("Du åbnede meget stille og roligt, da du ikke vidste, hvem eller hvad der var derude.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du kiggede lige ud med hovedet, så du lige kunne se ud. Der var ikke nogen, men det var mærkeligt, da der lige før var nogen. Du prøvede at undersøge stedet, du var på. Da du havde gået lidt rundt, fandt du et spejl.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du kiggede lidt ind i spejlet og så, at du havde ører - ikke ører som normalt, men spidse ører som en alf. Du var lidt i chok, men ville ikke sige noget, da du ikke vidste, hvem eller hvad der var her.");
+        Console.WriteLine("Du var bange for, at du var fanget.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du gik videre og rundt, da du fandt et billede af dig selv. Ved siden af stod der en kvinde, du ikke lige kunne genkende. Du tænkte, at det måske var hende, du hørte.");
+        Console.WriteLine("Du undersøgte lidt mere og fandt et vindue, du kunne se ud af.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du kiggede lidt ud af det, og det var helt mørkt. Du tænkte lidt for dig selv: Hvor lang tid var jeg lige væk ? Var det ikke lyst tidligere ? Hvad er klokken ? Du begyndte lidt at se rundt, og dine øjne faldt over et ur.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Det var et andet ur, end du havde set før. Du kunne ikke genkende symbolerne til at starte med, men efter du kiggede på det, kunne du se, at klokken var 3:15. Det var lidt mærkeligt, at du ikke kunne se, hvad det var. ");
+        Console.WriteLine("Du tænkte lidt over det igen:");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Er jeg i en anden verden? Eller er det symbolerne eller tallene eller hvad? Eller er dette en prank? Hvad sker der? Hvad skal jeg gøre nu - finde hende, som jeg hørte før, eller prøve at finde en vej ud?");
+
+    }
+    else
+    {
+        Console.WriteLine("Ugyldigt valg. Prøv igen.");
+    }
+
+} while (valg_1 != "1" && valg_1 != "2");
+
+do
+{
+    Console.WriteLine("-----------------------------------");
+    Console.WriteLine("Hvad vil du gøre nu?");
+    
+    if (valg_1 == "1") 
+    {
+        Console.WriteLine("1. Følge efter hende...");
+        Console.WriteLine("2. Prøve at finde en vej ud...");
+    }
+    else if (valg_1 == "2")
+    {
+        Console.WriteLine("1. Lede efter hende du hørte før...");
+        Console.WriteLine("2. Lede efter en vej ud...");
+    }
+    
+    valg_2 = Console.ReadLine() ?? "";
+
+    if (valg_1 == "1" && valg_2 == "1")
+    {
+        Console.WriteLine("Du valgte at følge efter hende...");
+        Thread.Sleep(1000); // Venter 1 sekunder
+        Console.WriteLine("");
+
+        Console.WriteLine("Du er vågnede igen, Kan du huske noget? Hvad der skete? spurgte hun.");
+        Console.WriteLine("Du sagde: Nej.");
+        Console.WriteLine("Hun sagde: Det var der ikke så godt. Hvor meget kan du huske så?");
+        Console.WriteLine("Du sagde: Ikke noget sådan rigtigt. Jeg kan ikke huske noget efter i dag.");
+        Console.WriteLine("Hun sagde: Så må jeg fylde dig ind, da du har glemt det.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("I gik rundt i huset, hvor hun viste, hvor hun sov, og hvor alt var. I gik ned ad en gang, og så sagde hun, at du må aldrig gå ind ad denne her dør - der bor noget dernede, du ikke vil se.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("I gik lidt mere rundt, og hun viste, hvor døren ud til verden var. Hun sagde, at klokken var mange, og at I skulle gå i seng. Men jeg kan jo ikke sove - jeg er lige vågnede!");
+        Console.WriteLine("Nej, nej, det skal du ikke tage dig af. Du skal bare snart sove, sagde hun.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Så du gik ind ved dit sted, hvor du kunne høre noget fylde sig et eller andet. Så du gik ned mod gangen og så, der stod et eller andet, som ikke lignede din mor. Du lukkede døren hurtigt og hårdt.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du kunne høre, den kom tættere på din dør, så du skyndte dig hen, hvor du vågnede, og lagde dig med lidt åbne øjne, så du kunne se, om der skete noget.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du kunne lige så stille høre døren åbne og noget eller nogen kigge ind. Du lå helt stille, som om du sov. Du vidste ikke, hvad den ville gøre ved dig.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Den lukkede døren igen meget stille, og du kunne høre den gå væk. Så du gik hen til døren igen og åbnede den, så du kunne lige kigge ud, og du så, den var langt nok væk.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du tog løbet og løb ud mod døren til udgangen. Du kiggede lige bag ved dig, imens du løb, og så, at den var på vej mod dig, og den løb ikke langsomt, kunne du se.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du kom hen til hoveddøren, men den var låst. Du prøvede at låse den op, men den gav sig ikke. Du prøvede igen hårdere, og den åbnede. Du lukkede døren og kiggede bagud, hvor du så, den var næsten ved dig.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du skubbede dig ud og lukkede døren, håbede på, den ikke ville gå derud. Du havde halvt lukkede øjne, da du så, den stoppede meget hurtigt og vendte sig om. Du så, den så din mor og begyndte at løbe mod døren,");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("hvor der stod ingen adgang på. Du vendte dig om og gik væk.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du tænkte: Hvorfor har hun det? Hvad er det? Men noget, du vidste, var, at du ikke kom tilbage dertil.");
+        Console.ReadKey(true); // Venter på brugerinput
+        Thread.Sleep(5000); // Venter 5 sekunder
+
+        Console.WriteLine("**Slut**");
+
+    }
+    else if (valg_1 == "1" && valg_2 == "2")
+    {
+        Console.WriteLine("Du valgte at prøve at finde en vej ud...");
+        Thread.Sleep(1000); // Venter 1 sekunder
+        Console.WriteLine("");
+
+        Console.WriteLine("Du er vågnede igen, Kan du huske noget? Hvad der skete? spurgte hun.");
+        Console.WriteLine("Du sagde: Nej.");
+        Console.WriteLine("Hun sagde: Puha, det var også en dårlig tur, du var igennem der. Det skal vi ikke prøve igen.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("I gik ud til hvad der lignede en stue, men ikke helt. I satte jer og snakkede, da dine øjne gled hen mod en gang, som du også syntes, du kendte, men ikke helt. Du spurgte: Hvad er der nede ad gangen?");
+        Console.WriteLine("Du fik et hurtigt svar: Ikke noget.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du sad bare og kiggede rundt, så lidt på, hvad der skete, hvor du var, og hvorfor du var her. Du prøvede at få nogle svar ud af, hvem og hvor du var. Du holdt også lidt igen, da hun ikke skulle have mistanker om dig.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Noget tid efter kunne du se hende falde hen. Hun faldt hen, og du havde lagt en plan om at se, hvad der var nede i den gang.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du kunne se, at hun var væk, så du listede hen mod gangen og begyndte at kigge på døren for at se, om der var en, der spillede sig ud. Og det var der - en dør, der stod åben. Det var mærkeligt, syntes du.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du gik ind og så, der var en trappe ned. Du listede lige så stille videre og søgte efter svar. Du så en mand i rummet, som lignede dig meget. Du gik meget stille hen mod ham. Du kunne se på ørerne, at han sad på knæ.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Da du var kommet så tæt på, tog han fat i dig. Du spurgte: Hvem er I?");
+        Console.WriteLine("Han svarede med et lille grin efter fyldt af: Min aftensmad.");
+        Console.ReadKey(true); // Venter på brugerinput
+
+        Console.WriteLine("Du råbte om hjælp til din mor. Du kunne høre, hun kom hurtigt, men da hun kom til døren og så, den var åben, begyndte hun at græde, kunne du høre, og et bam som om en dør blev lukket meget hurtigt.");
+        Console.WriteLine("Du kunne kun lige høre et lille farvel, efter fyldt af et lille grin til.");
+        Console.ReadKey(true); // Venter på brugerinput
+        Thread.Sleep(5000); // Venter 5 sekunder
+
+        Console.WriteLine("**Slut**");
+    }
+    else if (valg_1 == "2" && valg_2 == "1")
+    {
+        Console.WriteLine("Du valgte at lede efter hende du hørte før...");
+        // Her tilføjer jeg teksten fra Del 3.3
+    }
+    else if (valg_1 == "2" && valg_2 == "2")
+    {
+        Console.WriteLine("Du valgte at lede efter en vej ud...");
+        // Her tilføjer jeg teksten fra Del 3.4
+    }
+    else
+    {
+        Console.WriteLine("Ugyldigt valg. Prøv igen.");
+    }
+
+} while (valg_2 != "1" && valg_2 != "2");

@@ -1,4 +1,5 @@
 # Virtual Mouse med Hånd-Tracking - til MacOS
+# Lavet sammne med Benjamin Ole Ryborg
 
 import cv2
 import numpy as np
